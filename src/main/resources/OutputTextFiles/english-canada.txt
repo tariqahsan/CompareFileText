@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html class='no-js' dir='ltr' lang='en'>
+<head>
+<meta charset='UTF-8'>
+<meta content='ie=edge' http-equiv='x-ua-compatible'>
+<script>window.NREUM||(NREUM={});NREUM.info={"beacon":"bam-cell.nr-data.net","errorBeacon":"bam-cell.nr-data.net","licenseKey":"9edb043da4","applicationID":"1729965","transactionName":"eldYFkBWDlhWQBcMC19XRA9TTQtbXR1eBBRK","queueTime":0,"applicationTime":224,"agent":""}</script>
+<script>(window.NREUM||(NREUM={})).init={ajax:{deny_list:["bam-cell.nr-data.net"]}};(window.NREUM||(NREUM={})).loader_config={licenseKey:"9edb043da4",applicationID:"1729965"};window.NREUM||(NREUM={}),__nr_require=function(t,e,n){function r(n){if(!e[n]){var i=e[n]={exports:{}};t[n][0].call(i.exports,function(e){var i=t[n][1][e];return r(i||e)},i,i.exports)}return e[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var i=0;i<n.length;i++)r(n[i]);return r}({1:[function(t,e,n){function r(){}function i(t,e,n){return function(){return o(t,[u.now()].concat(f(arguments)),e?null:this,n),e?void 0:this}}var o=t("handle"),a=t(8),f=t(9),c=t("ee").get("tracer"),u=t("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var d=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],p="api-",l=p+"ixn-";a(d,function(t,e){s[e]=i(p+e,!0,"api")}),s.addPageAction=i(p+"addPageAction",!0),s.setCurrentRouteName=i(p+"routeName",!0),e.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(t,e){var n={},r=this,i="function"==typeof e;return o(l+"tracer",[u.now(),t,n],r),function(){if(c.emit((i?"":"no-")+"fn-start",[u.now(),r,i],n),i)try{return e.apply(this,arguments)}catch(t){throw c.emit("fn-err",[arguments,this,t],n),t}finally{c.emit("fn-end",[u.now()],n)}}}};a("actionText,setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(t,e){m[e]=i(l+e)}),newrelic.noticeError=function(t,e){"string"==typeof t&&(t=new Error(t)),o("err",[t,u.now(),!1,e])}},{}],2:[function(t,e,n){function r(t){if(NREUM.init){for(var e=NREUM.init,n=t.split("."),r=0;r<n.length-1;r++)if(e=e[n[r]],"object"!=typeof e)return;return e=e[n[n.length-1]]}}e.exports={getConfiguration:r}},{}],3:[function(t,e,n){function r(){return f.exists&&performance.now?Math.round(performance.now()):(o=Math.max((new Date).getTime(),o))-a}function i(){return o}var o=(new Date).getTime(),a=o,f=t(10);e.exports=r,e.exports.offset=a,e.exports.getLastTimestamp=i},{}],4:[function(t,e,n){function r(t){return!(!t||!t.protocol||"file:"===t.protocol)}e.exports=r},{}],5:[function(t,e,n){function r(t,e){var n=t.getEntries();n.forEach(function(t){"first-paint"===t.name?d("timing",["fp",Math.floor(t.startTime)]):"first-contentful-paint"===t.name&&d("timing",["fcp",Math.floor(t.startTime)])})}function i(t,e){var n=t.getEntries();n.length>0&&d("lcp",[n[n.length-1]])}function o(t){t.getEntries().forEach(function(t){t.hadRecentInput||d("cls",[t])})}function a(t){if(t instanceof m&&!g){var e=Math.round(t.timeStamp),n={type:t.type};e<=p.now()?n.fid=p.now()-e:e>p.offset&&e<=Date.now()?(e-=p.offset,n.fid=p.now()-e):e=p.now(),g=!0,d("timing",["fi",e,n])}}function f(t){"hidden"===t&&d("pageHide",[p.now()])}if(!("init"in NREUM&&"page_view_timing"in NREUM.init&&"enabled"in NREUM.init.page_view_timing&&NREUM.init.page_view_timing.enabled===!1)){var c,u,s,d=t("handle"),p=t("loader"),l=t(7),m=NREUM.o.EV;if("PerformanceObserver"in window&&"function"==typeof window.PerformanceObserver){c=new PerformanceObserver(r);try{c.observe({entryTypes:["paint"]})}catch(v){}u=new PerformanceObserver(i);try{u.observe({entryTypes:["largest-contentful-paint"]})}catch(v){}s=new PerformanceObserver(o);try{s.observe({type:"layout-shift",buffered:!0})}catch(v){}}if("addEventListener"in document){var g=!1,h=["click","keydown","mousedown","pointerdown","touchstart"];h.forEach(function(t){document.addEventListener(t,a,!1)})}l(f)}},{}],6:[function(t,e,n){function r(t,e){if(!i)return!1;if(t!==i)return!1;if(!e)return!0;if(!o)return!1;for(var n=o.split("."),r=e.split("."),a=0;a<r.length;a++)if(r[a]!==n[a])return!1;return!0}var i=null,o=null,a=/Version\/(\S+)\s+Safari/;if(navigator.userAgent){var f=navigator.userAgent,c=f.match(a);c&&f.indexOf("Chrome")===-1&&f.indexOf("Chromium")===-1&&(i="Safari",o=c[1])}e.exports={agent:i,version:o,match:r}},{}],7:[function(t,e,n){function r(t){function e(){t(a&&document[a]?document[a]:document[i]?"hidden":"visible")}"addEventListener"in document&&o&&document.addEventListener(o,e,!1)}e.exports=r;var i,o,a;"undefined"!=typeof document.hidden?(i="hidden",o="visibilitychange",a="visibilityState"):"undefined"!=typeof document.msHidden?(i="msHidden",o="msvisibilitychange"):"undefined"!=typeof document.webkitHidden&&(i="webkitHidden",o="webkitvisibilitychange",a="webkitVisibilityState")},{}],8:[function(t,e,n){function r(t,e){var n=[],r="",o=0;for(r in t)i.call(t,r)&&(n[o]=e(r,t[r]),o+=1);return n}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],9:[function(t,e,n){function r(t,e,n){e||(e=0),"undefined"==typeof n&&(n=t?t.length:0);for(var r=-1,i=n-e||0,o=Array(i<0?0:i);++r<i;)o[r]=t[e+r];return o}e.exports=r},{}],10:[function(t,e,n){e.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(t,e,n){function r(){}function i(t){function e(t){return t&&t instanceof r?t:t?u(t,c,a):a()}function n(n,r,i,o,a){if(a!==!1&&(a=!0),!l.aborted||o){t&&a&&t(n,r,i);for(var f=e(i),c=v(n),u=c.length,s=0;s<u;s++)c[s].apply(f,r);var p=d[w[n]];return p&&p.push([b,n,r,f]),f}}function o(t,e){y[t]=v(t).concat(e)}function m(t,e){var n=y[t];if(n)for(var r=0;r<n.length;r++)n[r]===e&&n.splice(r,1)}function v(t){return y[t]||[]}function g(t){return p[t]=p[t]||i(n)}function h(t,e){l.aborted||s(t,function(t,n){e=e||"feature",w[n]=e,e in d||(d[e]=[])})}var y={},w={},b={on:o,addEventListener:o,removeEventListener:m,emit:n,get:g,listeners:v,context:e,buffer:h,abort:f,aborted:!1};return b}function o(t){return u(t,c,a)}function a(){return new r}function f(){(d.api||d.feature)&&(l.aborted=!0,d=l.backlog={})}var c="nr@context",u=t("gos"),s=t(8),d={},p={},l=e.exports=i();e.exports.getOrSetContext=o,l.backlog=d},{}],gos:[function(t,e,n){function r(t,e,n){if(i.call(t,e))return t[e];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(t,e,{value:r,writable:!0,enumerable:!1}),r}catch(o){}return t[e]=r,r}var i=Object.prototype.hasOwnProperty;e.exports=r},{}],handle:[function(t,e,n){function r(t,e,n,r){i.buffer([t],r),i.emit(t,e,n)}var i=t("ee").get("handle");e.exports=r,r.ee=i},{}],id:[function(t,e,n){function r(t){var e=typeof t;return!t||"object"!==e&&"function"!==e?-1:t===window?0:a(t,o,function(){return i++})}var i=1,o="nr@id",a=t("gos");e.exports=r},{}],loader:[function(t,e,n){function r(){if(!R++){var t=M.info=NREUM.info,e=v.getElementsByTagName("script")[0];if(setTimeout(u.abort,3e4),!(t&&t.licenseKey&&t.applicationID&&e))return u.abort();c(E,function(e,n){t[e]||(t[e]=n)});var n=a();f("mark",["onload",n+M.offset],null,"api"),f("timing",["load",n]);var r=v.createElement("script");0===t.agent.indexOf("http://")||0===t.agent.indexOf("https://")?r.src=t.agent:r.src=l+"://"+t.agent,e.parentNode.insertBefore(r,e)}}function i(){"complete"===v.readyState&&o()}function o(){f("mark",["domContent",a()+M.offset],null,"api")}var a=t(3),f=t("handle"),c=t(8),u=t("ee"),s=t(6),d=t(4),p=t(2),l=p.getConfiguration("ssl")===!1?"http":"https",m=window,v=m.document,g="addEventListener",h="attachEvent",y=m.XMLHttpRequest,w=y&&y.prototype,b=!d(m.location);NREUM.o={ST:setTimeout,SI:m.setImmediate,CT:clearTimeout,XHR:y,REQ:m.Request,EV:m.Event,PR:m.Promise,MO:m.MutationObserver};var x=""+location,E={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1210.min.js"},O=y&&w&&w[g]&&!/CriOS/.test(navigator.userAgent),M=e.exports={offset:a.getLastTimestamp(),now:a,origin:x,features:{},xhrWrappable:O,userAgent:s,disabled:b};if(!b){t(1),t(5),v[g]?(v[g]("DOMContentLoaded",o,!1),m[g]("load",r,!1)):(v[h]("onreadystatechange",i),m[h]("onload",r)),f("mark",["firstbyte",a.getLastTimestamp()],null,"api");var R=0}},{}],"wrap-function":[function(t,e,n){function r(t,e){function n(e,n,r,c,u){function nrWrapper(){var o,a,s,p;try{a=this,o=d(arguments),s="function"==typeof r?r(o,a):r||{}}catch(l){i([l,"",[o,a,c],s],t)}f(n+"start",[o,a,c],s,u);try{return p=e.apply(a,o)}catch(m){throw f(n+"err",[o,a,m],s,u),m}finally{f(n+"end",[o,a,p],s,u)}}return a(e)?e:(n||(n=""),nrWrapper[p]=e,o(e,nrWrapper,t),nrWrapper)}function r(t,e,r,i,o){r||(r="");var f,c,u,s="-"===r.charAt(0);for(u=0;u<e.length;u++)c=e[u],f=t[c],a(f)||(t[c]=n(f,s?c+r:r,i,c,o))}function f(n,r,o,a){if(!m||e){var f=m;m=!0;try{t.emit(n,r,o,e,a)}catch(c){i([c,n,r,o],t)}m=f}}return t||(t=s),n.inPlace=r,n.flag=p,n}function i(t,e){e||(e=s);try{e.emit("internal-error",t)}catch(n){}}function o(t,e,n){if(Object.defineProperty&&Object.keys)try{var r=Object.keys(t);return r.forEach(function(n){Object.defineProperty(e,n,{get:function(){return t[n]},set:function(e){return t[n]=e,e}})}),e}catch(o){i([o],n)}for(var a in t)l.call(t,a)&&(e[a]=t[a]);return e}function a(t){return!(t&&t instanceof Function&&t.apply&&!t[p])}function f(t,e){var n=e(t);return n[p]=t,o(t,n,s),n}function c(t,e,n){var r=t[e];t[e]=f(r,n)}function u(){for(var t=arguments.length,e=new Array(t),n=0;n<t;++n)e[n]=arguments[n];return e}var s=t("ee"),d=t(9),p="nr@original",l=Object.prototype.hasOwnProperty,m=!1;e.exports=r,e.exports.wrapFunction=f,e.exports.wrapInPlace=c,e.exports.argsToArray=u},{}]},{},["loader"]);</script>
+<meta content='width=device-width, initial-scale=1.0' name='viewport'>
+<meta content='Find answers to frequently asked questions about the U.S. nonimmigrant visa application process (examples: visa fees, appointments, renewals, document return).' name='description'>
+<noscript>
+<meta content='0; URL=/js-disabled.html' http-equiv='Refresh'>
+</noscript>
+<title>Frequently Asked Questions | Official U.S. Department of State Visa Appointment Service | Canada | English</title>
+<link rel="shortcut icon" type="image/x-icon" href="/assets/favicon-0f61d92d08f619cc4b554170f7a508f5bc140b972d5272bfba3a09c4aa4105ef.ico" />
+<link rel="stylesheet" media="screen" href="/assets/application_ltr-153db22150309ab540081053785eb882665256104216c75ab6e813af4967d284.css" />
+<link rel="stylesheet" media="print" href="/assets/print-507def8abca9e099f524b340c6b449a73c157fec814907853793a74e2a8d4580.css" />
+<script src="/assets/application-f9a57de0417b4281101cc4cb5c2fd8bd9c01b379d9fef57472e65350f401a5ca.js"></script>
+
+
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="W0//Z7Y7NC0ID4YMCx8oqw1faNoERHt536l7QJgSm0yOGOLQ5mcjDGa7mleKtG3p67X7ihUk/cJAxYkA38VNYw==" />
+</head>
+<body class='information faqs niv' data-disable-with-content='Please wait...'>
+
+<div id='skip'>
+<a href='#main'>Skip to main content</a>
+</div>
+<a id='top'></a>
+<div class='off-canvas position-right' data-off-canvas='' id='offCanvas'>
+<ul class='vertical medium-horizontal dropdown menu' data-back-button='&lt;li class=&#39;js-drilldown-back&#39;&gt;&lt;a tabindex=&#39;0&#39; class=&#39;new-back&#39;&gt;Back&lt;/a&gt;&lt;/li&gt;' data-responsive-menu='drilldown medium-dropdown'>
+<li>
+<a href="/en-ca/niv"><span class='hide-for-medium fas fa-home fa-lg'></span>
+Home
+</a></li>
+<li>
+<a>
+<span class='hide-for-medium fas fa-language fa-lg'></span>
+Language
+</a>
+<ul class='menu'>
+<li>
+<a href="/en-ca/niv/information/faqs">English</a>
+</li>
+<li>
+<a href="/fr-ca/niv/information/faqs">French</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/en-ca/niv/users/sign_in">Sign In</a>
+</li>
+</ul>
+
+</div>
+<div class='off-canvas-content'>
+<header class='top-bar' id='header'>
+<nav class='row column'>
+<div class='top-bar-left'>
+<div class='site-name hide-for-medium'>
+Official U.S. D.O.S. Visa Appointment Service
+</div>
+<div class='country'>
+Canada
+</div>
+<div class='site-name show-for-medium'>
+Official U.S. Department of State Visa Appointment Service
+</div>
+</div>
+<div class='top-bar-right'>
+<span class='visa-type-indicator show-for-medium'>
+Non Immigrant Visa
+</span>
+<div class='show-for-medium nav-container'>
+<ul class='vertical medium-horizontal dropdown menu' data-back-button='&lt;li class=&#39;js-drilldown-back&#39;&gt;&lt;a tabindex=&#39;0&#39; class=&#39;new-back&#39;&gt;Back&lt;/a&gt;&lt;/li&gt;' data-responsive-menu='drilldown medium-dropdown'>
+<li>
+<a href="/en-ca/niv"><span class='hide-for-medium fas fa-home fa-lg'></span>
+Home
+</a></li>
+<li>
+<a>
+<span class='hide-for-medium fas fa-language fa-lg'></span>
+Language
+</a>
+<ul class='menu'>
+<li>
+<a href="/en-ca/niv/information/faqs">English</a>
+</li>
+<li>
+<a href="/fr-ca/niv/information/faqs">French</a>
+</li>
+</ul>
+</li>
+<li>
+<a href="/en-ca/niv/users/sign_in">Sign In</a>
+</li>
+</ul>
+
+</div>
+<div class='hide-for-medium text-right'>
+<button class='mobile' data-toggle='offCanvas' type='button'>
+<i class='fas fa-bars' title='Actions'>
+<span class='sr-only'>Actions</span>
+</i>
+</button>
+</div>
+</div>
+</nav>
+</header>
+<main id='main'>
+
+<div id='modal'>
+<div class='loader'>
+&nbsp;
+</div>
+<div class='content'>
+
+</div>
+</div>
+<div class='subTitleBackground'>
+<div class='row subTitle'>
+<div class='medium-12 column'>
+<h1 class='text'>Frequently Asked Questions</h1>
+</div>
+</div>
+</div>
+<div class='mainContent' data-back-to-top='Back to top'>
+<div class='row'>
+<div class='large-3 medium-4 column show-for-medium' data-sticky-container=''>
+<nav class='content-nav sticky' data-btm-anchor='content:bottom' data-margin-top='2' data-sticky='' data-top-anchor='content:top'>
+<ul class='menu vertical'>
+<li><a href="/en-ca/niv/information/faqs">Answers to Common Questions</a></li>
+<li><a href="/en-ca/niv/information/special_visas">Special Visa (Diplomats, Fulbright Scholars, Members of the First Nations and Native Americans Born in Canada, etc.)</a></li>
+<li><a href="/en-ca/niv/information/contact_us">Contact Us</a></li>
+<li><a href="/en-ca/iv">Immigrant Visas</a></li>
+<li><a href="/en-ca/niv/information/privacy_policy">Privacy Policy and Terms of Use</a></li>
+</ul>
+<div class='related-links'>
+<a href="/en-ca/niv/information/niv">How to Apply / Visa Overview</a>
+<a href="/en-ca/niv/information/announcements">Announcements</a>
+</div>
+</nav>
+</div>
+
+<div class='large-7 medium-8 column large-offset-1 end' id='content'>
+<h2 id='general-questions'>General Questions</h2>
+<ol data-smooth-scroll=''>
+<li>
+<a href='#site_purpose'>What is the purpose of this site? </a>
+</li>
+<li>
+<a href='#faster_appointment_elsewhere'>Is it true that another company, website or individual can get a U.S. visa appointment faster than through this service?</a>
+</li>
+<li>
+<a href='#guarantee_visa_issuance_elsewhere'>Is it true that another company, website or individual can guarantee the issuance of a U.S. visa?</a>
+</li>
+<li>
+<a href='#qualify_vwp'>How do I know if I qualify for the Visa Waiver Program?</a>
+</li>
+<li>
+<a href='#ds160_help'>Can you help me with the DS-160? I do not know what to put for a certain field. I cannot upload my picture properly. I cannot get a confirmation email. I cannot print out my confirmation page.</a>
+</li>
+<li>
+<a href='#what_is_my_email_used_for'>What is my email address used for on this website?</a>
+</li>
+<li>
+<a href='#interview_at_different_consulate_than_ds160'>What happens to my online Form DS-160 if I select a U.S. Consular Section where I will be applying for my visa, but end up making an interview appointment instead to another U.S. Consular Section?</a>
+</li>
+<li>
+<a href='#social_media_requirements'>Is there a requirement to provide social media identifiers when applying for a U.S. Visa?</a>
+</li>
+<li>
+<a href='#service_outage'>What should I do if there is a service outage affecting this website or any of the associated services? (Examples: unable to complete visa fee payment at a bank or online, unable to reach the call center number, unable to download the courier receipt, etc.)</a>
+</li>
+<li>
+<a href='#edit_incorrect_info_after_scheduling'>How can I edit my applicant information if I make a mistake?</a>
+</li>
+<li>
+<a href='#facility_security_measures'>Are there any measures being taken at the Service Centers to ensure my health and safety during my visit?</a>
+</li>
+</ol>
+<h2 id='visa-related-questions'>Visa Related Questions</h2>
+<ol data-smooth-scroll=''>
+<li>
+<a href='#what_is_a_visa'>What is a visa?</a>
+</li>
+<li>
+<a href='#what_types_of_visa'>What types of visas are available?</a>
+</li>
+<li>
+<a href='#c1d_b1b2_dual_visa'>I wish to apply for C1/D and B1/B2 dual visa. What should I do?</a>
+</li>
+<li>
+<a href='#who_decides_if_i_get_a_visa'>Who decides if I will get a visa?</a>
+</li>
+<li>
+<a href='#how_long_to_process'>How long does it take to process my visa application?</a>
+</li>
+<li>
+<a href='#admin_processing'>What is &quot;administrative processing&quot;?</a>
+</li>
+<li>
+<a href='#how_long_can_i_stay'>How long am I authorized to stay in the United States?</a>
+</li>
+<li>
+<a href='#apply_two_visa_types_same_time'>Can I apply for two different visa types at the same time?</a>
+</li>
+<li>
+<a href='#does_visa_guarantee_entry'>After I have my visa, will I be able to enter the U.S.?</a>
+</li>
+<li>
+<a href='#changed_name_visa_validity'>I changed my name. Is my U.S. visa with my old name still valid?</a>
+</li>
+<li>
+<a href='#book_travel_before_interview'>Should I book my travel before the interview?</a>
+</li>
+</ol>
+<h2 id='visa-renewals-extensions'>Visa Renewals and Extensions Questions</h2>
+<ol data-smooth-scroll=''>
+<li>
+<a href='#extend_visa'>How can I extend my visa?</a>
+</li>
+<li>
+<a href='#expiring_visa'>I have a nonimmigrant visa that will expire soon. Do I need to go through the whole visa application process again?</a>
+</li>
+</ol>
+<h2 id='passport'>Passport Questions</h2>
+<ol data-smooth-scroll=''>
+<li>
+<a href='#passport_blank_page'>Why do I need a blank page in my passport?</a>
+</li>
+<li>
+<a href='#dual_citizen_which_passport'>I have dual citizenship. Which passport should I use to travel to the United States?</a>
+</li>
+<li>
+<a href='#valid_visa_passport_stolen'>My passport with the valid visa was stolen. What should I do?</a>
+</li>
+<li>
+<a href='#passport_validity_length'>How long does my passport have to be valid in order to apply for a U.S. visa?</a>
+</li>
+<li>
+<a href='#passport_replacement'>I had to replace my passport before the scheduled appointment date. What do I need to do?</a>
+</li>
+<li>
+<a href='#expired_passport_valid_visa'>My passport has expired but my U.S. visa is still active. What do I need to do?</a>
+</li>
+</ol>
+<h2 id='mrv-fee'>MRV Fee Questions</h2>
+<ol data-smooth-scroll=''>
+<li>
+<a href='#app_denied_refund'>My application was denied. Can I get a refund of the visa fee?</a>
+</li>
+<li>
+<a href='#system_error_making_payment'>I got a system error when I was making my MRV fee payment online. Did my payment go through? How do I get my MRV fee receipt number?</a>
+</li>
+<li>
+<a href='#transfer_mrv_fee'>Can I sell or give my MRV fee to someone else?</a>
+</li>
+<li>
+<a href='#paid_wrong_fee'>I paid the wrong MRV fee amount, what should I do?</a>
+</li>
+<li>
+<a href='#paid_after_expiration'>I paid the MRV amount after the expiration date, what should I do?</a>
+</li>
+<li>
+<a href='#overpaid_mrv_fee'>I overpaid my MRV fee, what should I do?</a>
+</li>
+<li>
+<a href='#where_to_find_terms_and_conditions'>Where do I find the terms and conditions of the visa application (MRV) fee payment?</a>
+</li>
+</ol>
+<h2 id='visa-appt'>Visa Appointment Questions</h2>
+<ol data-smooth-scroll=''>
+<li>
+<a href='#need_earlier_appt'>I need an earlier appointment and there are no available appointments, what should I do?</a>
+</li>
+<li>
+<a href='#reschedule_cancel_appt'>How can I reschedule or cancel an appointment?</a>
+</li>
+<li>
+<a href='#missed_appt'>What should I do if I missed my interview?</a>
+</li>
+<li>
+<a href='#lodge_complaints'>Where should the applicant lodge any complaints?</a>
+</li>
+<li>
+<a href='#edit_scheduled_group_appt'>How do I add or change members for a scheduled group appointment?</a>
+</li>
+<li>
+<a href='#who_can_accompany_me'>Who can accompany me to the visa interview?</a>
+</li>
+<li>
+<a href='#all_applicants_required_to_appear'>Are all visa applicants required to appear in person for a consular interview?</a>
+</li>
+</ol>
+<h2 id='document-delivery-questions'>Document Delivery Questions</h2>
+<ol data-smooth-scroll=''>
+<li>
+<a href='#track_documents'>How do I track my documents that I have sent to the Consular Section?</a>
+</li>
+<li>
+<a href='#get_passport_back'>How do I get my passport/visa back after the application is processed?</a>
+</li>
+<li>
+<a href='#change_address'>Can I change the pickup location?  Can I change to home delivery?</a>
+</li>
+<li>
+<a href='#been_too_long'>It has been over 2 weeks since my Consular Section interview, when can I expect to receive my documents?</a>
+</li>
+<li>
+<a href='#expedite_courier_return'>Can I expedite the courier return of my documents?</a>
+</li>
+<li>
+<a href='#submit_visa_app_docs_by_mail'>Can I submit my visa application documents to the Consular Section by mail?</a>
+</li>
+<li>
+<a href='#how_do_i_submit_additional_documents'>I received instructions from the Consular Section to submit additional documents in connection to my visa application. How do I do this?</a>
+</li>
+<li>
+<a href='#how_to_track_document_delivery_status'>How do I track document delivery status?</a>
+</li>
+<li>
+<a href='#new_courier'>My pickup location is Loomis prior to December 1, 2015. How can I change my pickup location to the nearest Canada Post office?</a>
+</li>
+</ol>
+<hr>
+<div class='card faq-group general-questions'>
+<h2>General Questions</h2>
+<ol>
+<li id='site_purpose'>
+<h3 class='h4'>What is the purpose of this site? </h3>
+<p>The U.S. Department of State has contracted CSRA to provide all or some of the following nonimmigrant visa services for Canada:</p>
+<ol>
+<li>Visa service information (web, IVR and call center)</li>
+<li>Visa fee collection</li>
+<li>Scheduling of visa application review/interview</li>
+<li>Visa documents inbound and outbound courier services</li>
+</ol>
+<p>CSRA is the only entity authorized to provide these services in this country on behalf of the U.S Department of State. If you use another company to provide these services that company must still use the services on this website.</p>
+</li>
+<li id='faster_appointment_elsewhere'>
+<h3 class='h4'>Is it true that another company, website or individual can get a U.S. visa appointment faster than through this service?</h3>
+<p>No. All companies and individuals must use this service in order to schedule a visa appointment. No individual or company is given higher preferences. Any claims made by third parties stating that they can guarantee faster access to U.S. Department of State visa services are fraudulent.</p><p><strong>What if I pay more money?</strong><br>No individual or company is given higher preferences. Any and all such claims are fraudulent.</p>
+</li>
+<li id='guarantee_visa_issuance_elsewhere'>
+<h3 class='h4'>Is it true that another company, website or individual can guarantee the issuance of a U.S. visa?</h3>
+<p>No. Any and all such claims are fraudulent.</p>
+</li>
+<li id='qualify_vwp'>
+<h3 class='h4'>How do I know if I qualify for the Visa Waiver Program?</h3>
+<p>To determine if you qualify for the Visa Waiver Program, please visit <a href="https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html" target="_blank">https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html</a>. You may also visit the Electronic System for Travel Authorization (ESTA) website at <a href="https://esta.cbp.dhs.gov/esta" target="_blank">https://esta.cbp.dhs.gov/esta</a>.</p>
+<p>Some travelers who are citizens of a Visa Waiver Program partner country may still be unable to travel to the United States under this program. If you have traveled to the Democratic People’s Republic of Korea, Iran, Iraq, Libya, Sudan, Syria, Somalia, or Yemen after March 2011, you are not eligible to travel under the Visa Waiver Program. Similarly, if you are a dual national of the Democratic People’s Republic of Korea, Iran, Iraq, Sudan, or Syria, you are also not eligible to travel under the Visa Waiver Program. These travelers should apply for a nonimmigrant visa well in advance of the desired travel date to avoid any unnecessary delays.</p>
+<p>Travelers with imminent travel may request an expedited visa appointment. To request an expedited visa appointment, first schedule a regular visa appointment on the closest available date. Then sign-in to your account, click ‘Continue’, select ‘Request Expedite’ and follow the instructions. The traveler should include in the request the date and purpose of the travel as well as a copy of any U.S. Customs and Border Protection message he/she received regarding their ESTA status and, if applicable, why the ESTA application was denied.</p>
+<p>More information about restrictions to travel under the Visa Waiver Program, including the requirement for an electronic passport, is available at <a href="https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html" target="_blank">https://travel.state.gov/content/travel/en/us-visas/tourism-visit/visa-waiver-program.html</a>.</p>
+</li>
+<li id='ds160_help'>
+<h3 class='h4'>Can you help me with the DS-160? I do not know what to put for a certain field. I cannot upload my picture properly. I cannot get a confirmation email. I cannot print out my confirmation page.</h3>
+<p>This is a visa information and appointment scheduling service only. Any advice to assist you or give you information or assistance on the form DS-160 can be found on the U.S. Department of State's website. You may find FAQs for the DS-160 application form at <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application/ds-160-faqs.html" target="_blank">https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application/ds-160-faqs.html</a>.</p>
+</li>
+<li id='what_is_my_email_used_for'>
+<h3 class='h4'>What is my email address used for on this website?</h3>
+<p>Your email address will be your account login ID. All email notifications sent from this website will be sent to the email address you provide. If you do not receive any emails from usvisa-info.com, please check your SPAM and junk folders.</p>
+</li>
+<li id='interview_at_different_consulate_than_ds160'>
+<h3 class='h4'>What happens to my online Form DS-160 if I select a U.S. Consular Section where I will be applying for my visa, but end up making an interview appointment instead to another U.S. Consular Section?</h3>
+<p>For information on this specific situation, please visit DS-160 Frequently Asked Questions at <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application/ds-160-faqs.html" target="_blank">https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/forms/ds-160-online-nonimmigrant-visa-application/ds-160-faqs.html</a>.</p>
+</li>
+<li id='social_media_requirements'>
+<h3 class='h4'>Is there a requirement to provide social media identifiers when applying for a U.S. Visa?</h3>
+<p>On May 31, 2019, the Department of State updated its immigrant and nonimmigrant visa application forms to request additional information, including social media identifiers, from most U.S. visa applicants worldwide. For more information, please see the Department of State’s responses to <a href='https://travel.state.gov/content/dam/visas/Enhanced%20Vetting/CA%20-%20FAQs%20on%20Social%20Media%20Collection%20-%206-4-2019%20(v.2).pdf' target='_blank'>Frequently Asked Questions</a>.</p>
+</li>
+<li id='service_outage'>
+<h3 class='h4'>What should I do if there is a service outage affecting this website or any of the associated services? (Examples: unable to complete visa fee payment at a bank or online, unable to reach the call center number, unable to download the courier receipt, etc.)</h3>
+<p>If you cannot complete one of the required actions described on this website because of a power failure, internet or telephone outage, or similar circumstances affecting your community, please try again when the outage is resolved. If you are still unsuccessful in completing the required action, please Contact Us using the information at the link <a href="https://ais.usvisa-info.com/en-ca/niv/information/contact_us">https://ais.usvisa-info.com/en-ca/niv/information/contact_us</a>. In your correspondence, please explain the type outage experienced, the service that was interrupted, and request guidance on what to do next.</p><p>If you were in the process of paying your visa fee online (examples: using a debit card, credit card, or electronic funds transfer) and you are not certain if your fee payment was completed before the outage occurred, DO NOT attempt to make your payment again. Please Contact Us using the information at the link <a href="https://ais.usvisa-info.com/en-ca/niv/information/contact_us">https://ais.usvisa-info.com/en-ca/niv/information/contact_us</a>. In your correspondence, please explain the type of outage experienced, the service that was interrupted, and ask if your payment was completed. Please note that visa fee payments are non-refundable, and it may take a long time to obtain a refund for a duplicate payment.</p>
+</li>
+<li id='edit_incorrect_info_after_scheduling'>
+<h3 class='h4'>How can I edit my applicant information if I make a mistake?</h3>
+<p>The U.S. Department of State places limits on the information you can change after you create an account in this system:</p>
+<ul>
+<li>You may update your email address and phone number at any time.</li>
+<li>You may change your passport number only one (1) time after a payment has been made.</li>
+<li>You may NOT change the given name, surname, country that issued passport, country of birth, date of birth, or gender associated to your applicant profile after paying your visa fee.</li>
+<li>For editing other information, if you already have an appointment scheduled, you must cancel your appointment to edit your information. If you do not have an appointment scheduled, you must sign-in to your account, click on the gear icon dropdown to the far right of the applicant name and select "Edit".</li>
+</ul>
+</li>
+<li id='facility_security_measures'>
+<h3 class='h4'>Are there any measures being taken at the Service Centers to ensure my health and safety during my visit?</h3>
+<p>Security measures at Service Centers that assist U.S. visa applicants have changed due to the COVID-19 pandemic. Service Centers follow local and state laws, regulations, and civil protection guidance regarding use of personal protective equipment, handwashing, facility sanitization, etc. Applicants should check local regulations and plan their Service Center visit accordingly.</p><p><strong>By entering the Service Center, you agree to the following:</strong></p>
+<ol>
+<li>You are not experiencing any flu-like symptoms.</li>
+<li>You do not have a fever. We recommend that you take your temperature before you visit the Service Center.</li>
+<li>You have not been in close contact in the last 14 days with anyone who, to the best of your knowledge, is being evaluated for, or has been diagnosed with, COVID-19.</li>
+<li>You will wear a face mask at all times when you are in the Service Center. You will only remove your mask when instructed to do so during biometric collection (where applicable).</li>
+<li>You will maintain the indicated amount of distance from other applicants and adhere to all distancing signs, floor markings, and seating restrictions.</li>
+<li>You will make use of the available hand washing / sanitizing facilities.</li>
+<li>You will follow the instructions of the Service Center staff members as they direct you through the facility.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class='card faq-group visa-related-questions'>
+<h2>Visa Related Questions</h2>
+<ol>
+<li id='what_is_a_visa'>
+<h3 class='h4'>What is a visa?</h3>
+<p>U.S. Citizens and lawful permanent residents do not need to obtain a visa to enter the United States. In general, a citizen of a foreign country who seeks to enter the United States must first obtain a U.S. visa. Certain international travelers may be eligible to enter the United States without a visa if they meet the requirements for the U.S. Visa Waiver program. For further information, please visit the Department of State website at <a href="https://travel.state.gov" target="_blank">https://travel.state.gov</a>.</p>
+</li>
+<li id='what_types_of_visa'>
+<h3 class='h4'>What types of visas are available?</h3>
+<p>There are various types of nonimmigrant visas for temporary travel to the United States. The type of visa you need depends on your purpose of travel. For information on all types of visas please visit <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/all-visa-categories.html" target="_blank">https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/all-visa-categories.html</a>.</p>
+</li>
+<li id='c1d_b1b2_dual_visa'>
+<h3 class='h4'>I wish to apply for C1/D and B1/B2 dual visa. What should I do?</h3>
+<p>You should complete one online DS-160 application form and pay one visa fee in order to schedule an appointment for your C1/D visa.</p>
+<p>At the time of your interview, you should inform Consular Officer that you wish to apply for a C1/D and B1/B2 dual visa.</p>
+<p>Note: Applying for dual visa is for C1/D, no other nonimmigrant visa combination is acceptable.</p>
+</li>
+<li id='who_decides_if_i_get_a_visa'>
+<h3 class='h4'>Who decides if I will get a visa?</h3>
+<p>Under U.S. law the Department of State has responsibility for issuing visas, and most visas are issued at one of the Department of State Embassies and Consulates abroad. A U.S. Consular Officer will review your application at the time of the interview and decide whether you are qualified for a visa.</p>
+<p>A visa doesn't permit entry to the U.S. A visa simply indicates that your application has been reviewed by a U.S. Consular Officer at US Embassy or Consulate, and that the officer determined you are eligible to travel to the port-of-entry for a specific purpose.</p>
+<p>Neither CSRA nor any of our staff play any part or influence in the outcome of your visa application.</p>
+</li>
+<li id='how_long_to_process'>
+<h3 class='h4'>How long does it take to process my visa application?</h3>
+<p>The time it will take for the Consular Section to process your visa application can vary depending on: </p>
+<ul>
+<li>the completeness of your visa application</li>
+<li>the amount of verification your visa application requires can affect the amount of time it take to process your application</li>
+<li>Consular Section may find that you need to provide further information before a decision can be made on your application</li>
+</ul>
+<p>If you wish to view the estimate on how long you will have to wait to get an interview appointment, please visit the U.S Department of State online tool at <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/wait-times.html" target="_blank">https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/wait-times.html</a>. This online tool will also tell you how long it will take for your visa to be processed at the Consular Section, after a decision is made by a Consular Officer to issue the visa. Please note that the processing time does not include any time required for administrative processing.</p>
+</li>
+<li id='admin_processing'>
+<h3 class='h4'>What is &quot;administrative processing&quot;?</h3>
+<p>Some visa applications require further administrative processing, which takes additional time after the visa applicant's interview by a consular officer. Applicants are advised of this requirement at the time of the consular officer interview. After attending the interview, you may track the status of your visa application at <a href="https://ceac.state.gov/CEAC" target="_blank">https://ceac.state.gov/CEAC</a> or, if applicable, follow any local instructions given to you at the interview. For more information on administrative processing or for case specific inquiries, please visit <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/administrative-processing-information.html" target="_blank">https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/administrative-processing-information.html</a> or the Consular Section website.</p>
+</li>
+<li id='how_long_can_i_stay'>
+<h3 class='h4'>How long am I authorized to stay in the United States?</h3>
+<p>Applicants should be aware that a visa does not guarantee entry into the United States. Legally, the visa specifies the period during which the bearer may apply at the port-of-entry to enter the United States.</p>
+<p>At the port-of-entry, a U.S. immigration officer of the Department of Homeland Security (DHS) decides whether to allow you to enter and how long you can stay for any particular visit, as part of the Admission process. Only the U.S. immigration officer has authority to permit you to enter the United States. For further information, please see "Admission to the United States and your Duration of Stay" <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-expiration-date.html" target="_blank">https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/visa-expiration-date.html</a>.</p>
+</li>
+<li id='apply_two_visa_types_same_time'>
+<h3 class='h4'>Can I apply for two different visa types at the same time?</h3>
+<p>This service allows the applicant to pay for and schedule one visa appointment at a time.</p>
+<p>The Consular Section may allow the applicant to interview and pay for a second visa type during the scheduled appointment for the first visa type.</p>
+<p><strong>Procedure for applying for two separate visa types at the same time:</strong></p>
+<ol>
+<li>Use this website or telephone service to pay the MRV fee and schedule an appointment for one of the visa types for which you want to apply.</li>
+<li>Attend your scheduled appointment(s).</li>
+<ul>
+<li>Be sure to bring all application documentation for the scheduled visa type.</li>
+<li>In addition, be sure to bring additional documents and payment for the second (unscheduled) visa type.</li>
+<li>You must indicate both visa types on your DS-160 at <a href="https://ceac.state.gov/genniv" target="_blank">https://ceac.state.gov/genniv</a>.</li>
+</ul>
+<li>At the scheduled appointment, follow the Consular Officer’s instructions to complete the application process for the second visa type, including payment of the MRV fee.</li>
+</ol>
+</li>
+<li id='does_visa_guarantee_entry'>
+<h3 class='h4'>After I have my visa, will I be able to enter the U.S.?</h3>
+<p>A visa does not guarantee entry into the United States but allows a foreign citizen to travel to a U.S. port-of-entry and request permission to enter the United States. The Department of Homeland Security U.S. Customs and Border Protection (CBP) immigration officers have the authority to permit or deny entry to the United States. This website (<a href="https://www.cbp.gov/travel/international-visitors" target="_blank">https://www.cbp.gov/travel/international-visitors</a>) on U.S. Custom and Border Protection has more information about entry into the United States.</p>
+<p>As of November 29, 2016, Chinese citizens with 10-year B1, B2 or B1/B2 visas in Peoples’ Republic of China passports are required to update their biographical and other information from their visa application through the Electronic Visa Update System (EVUS) before travelling to the United States. This update must be done every two years, or upon getting a new passport or B1, B2, or B1/B2 visa, whichever occurs first.</p>
+<p>EVUS enrollment is available at <a href="https://www.evus.gov" target="_blank">https://www.evus.gov</a>. There is currently no fee for EVUS enrollment. Until a fee is implemented, travelers can enroll in EVUS without charge. The Department of Homeland Security, Customs and Border Protection (CBP) will keep visa holders informed of new information at <a href="https://www.cbp.gov/evus" target="_blank">https://www.cbp.gov/evus</a>.</p>
+<p>自2016年11月29日起，所有�?中�?�人民共和国护照和10年期B1�?B2或B1/B2签�?的中国公民赴美�?，必须通过签�?更新电�?系统（EVUS）更新与签�?申请有关的个人信�?�和其它信�?�。此更新须�?两年进行一次，或者在获得新护照或新的B1�?B2或B1/B2签�?时进行更新，以先到期者为准。</p>
+<p>EVUS登记网站为 <a href="https://www.evus.gov" target="_blank">https://www.evus.gov</a>。目�?EVUS登记�?收费。在实施收费规定之�?，旅客�?��?费进行登记。美国国土安全部海关和边境�?护局（CBP）将通过网站 <a href="https://www.cbp.gov/evus" target="_blank">https://www.cbp.gov/evus</a> �?�签�?�?有人公布最新信�?�。</p>
+</li>
+<li id='changed_name_visa_validity'>
+<h3 class='h4'>I changed my name. Is my U.S. visa with my old name still valid?</h3>
+<p>If your name has legally changed through marriage, divorce, or a court ordered name change, you will need to obtain a new passport. Once you have a new passport, the Department of State recommends that you apply for a new U.S. visa to make it easier for you to travel to and from the United States.</p>
+</li>
+<li id='book_travel_before_interview'>
+<h3 class='h4'>Should I book my travel before the interview?</h3>
+<p>Applicants are strongly advised not to book travel until after they receive their passport and visa.</p>
+</li>
+</ol>
+</div>
+<div class='card faq-group visa-renewals-extensions'>
+<h2>Visa Renewals and Extensions Questions</h2>
+<ol>
+<li id='extend_visa'>
+<h3 class='h4'>How can I extend my visa?</h3>
+<p>If you want to extend your temporary stay in the United States, you must file a request with U.S. Citizenship and Immigration Services (USCIS) before your authorized stay expires. If you remain in the United States longer than authorized, you may be barred from returning and/or you may be removed (deported) from the United States. Check the period of stay that was stamped on your passport by Customs and Border protection officials to determine the date your authorized stay expires. To learn more how to extend your visa, please visit USCIS website at <a href="https://www.uscis.gov/visit-united-states/extend-your-stay" target="_blank">https://www.uscis.gov/visit-united-states/extend-your-stay</a>.</p>
+</li>
+<li id='expiring_visa'>
+<h3 class='h4'>I have a nonimmigrant visa that will expire soon. Do I need to go through the whole visa application process again?</h3>
+<p>Yes, you will need to go through the entire visa application process each time you apply for a visa, even if your visa is still valid. However, those who are renewing a previous U.S. visa or who meet certain other age-related criteria may qualify for a waiver of the visa interview. Eligibility is determined based on the answers provided to questions during the appointment scheduling process. However, consular officers reserve the right to require an interview for any visa applicant.</p>
+</li>
+</ol>
+</div>
+<div class='card faq-group passport'>
+<h2>Passport Questions</h2>
+<ol>
+<li id='passport_blank_page'>
+<h3 class='h4'>Why do I need a blank page in my passport?</h3>
+<p>U.S. nonimmigrant visas require an entire passport page to be printed. Please assure that your passport contains at least 1-2 blank visa/stamp pages for the printing of the visa and the associated entry stamps.</p>
+</li>
+<li id='dual_citizen_which_passport'>
+<h3 class='h4'>I have dual citizenship. Which passport should I use to travel to the United States?</h3>
+<p>If you have dual citizenship and are not a U.S. Citizen, you must select whichever nationality you prefer to enter the United States. You must enter and depart the United States using one passport.</p>
+</li>
+<li id='valid_visa_passport_stolen'>
+<h3 class='h4'>My passport with the valid visa was stolen. What should I do?</h3>
+<p>If your passport with your paper Form I-94 is lost or stolen, you must get them replaced immediately. There are a number of steps you need to take. To learn more, see Lost and Stolen Passports, Visas, and Form I-94s at <a href="https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/lost-stolen-visas.html" target="_blank">https://travel.state.gov/content/travel/en/us-visas/visa-information-resources/lost-stolen-visas.html</a>.</p>
+</li>
+<li id='passport_validity_length'>
+<h3 class='h4'>How long does my passport have to be valid in order to apply for a U.S. visa?</h3>
+<p>The passport should be valid for at least 6 months beyond the applicant's intended period of stay in the United States unless country specific agreements provide exceptions. Consult <a href="https://www.cbp.gov/document/bulletins/six-month-club-update" target="_blank">https://www.cbp.gov/document/bulletins/six-month-club-update</a> for exemptions. You may also visit <a href="https://travel.state.gov/content/visas/en.html" target="_blank">https://travel.state.gov/content/visas/en.html</a> for more information.</p>
+</li>
+<li id='passport_replacement'>
+<h3 class='h4'>I had to replace my passport before the scheduled appointment date. What do I need to do?</h3>
+<p>The applicant can attend the scheduled appointment and present the new passport. If the applicant is not able to obtain a new passport before the scheduled appointment date, the applicant must cancel or reschedule the appointment. An applicant will not be able to apply for a visa without a valid passport. Please provide a copy of the police report if the passport was stolen.</p>
+</li>
+<li id='expired_passport_valid_visa'>
+<h3 class='h4'>My passport has expired but my U.S. visa is still active. What do I need to do?</h3>
+<p>Unless canceled or revoked, a visa is valid until its expiration date. If your visa is still valid you can travel to the United States with your two passports, as long as the visa is valid, not damaged, and is the appropriate type of visa required for your primary purpose of travel. Both passports (the valid and the expired one with the visa) should be from the same country and type. Please note: A valid visa is not guarantee of entry into the United States. Final determination of entry is at the sole discretion of the CBP Officer reviewing the documentation.</p>
+</li>
+</ol>
+</div>
+<div class='card faq-group mrv-fee'>
+<h2>MRV Fee Questions</h2>
+<ol>
+<li id='app_denied_refund'>
+<h3 class='h4'>My application was denied. Can I get a refund of the visa fee?</h3>
+<p>No. The fee that you paid is an application fee. Everyone who applies for a U.S. visa anywhere in the world must pay this fee, which covers the cost of processing your application.</p>
+</li>
+<li id='system_error_making_payment'>
+<h3 class='h4'>I got a system error when I was making my MRV fee payment online. Did my payment go through? How do I get my MRV fee receipt number?</h3>
+<p>MRV fee payments are non-refundable. If you got a system error when making your MRV fee payment online, do not attempt to make another payment. Sign-in with your user account and go to your &quot;My Account&quot; home page, click on the &quot;Continue&quot; link and follow the instructions.</p>
+</li>
+<li id='transfer_mrv_fee'>
+<h3 class='h4'>Can I sell or give my MRV fee to someone else?</h3>
+<p>MRV fee payments are non-refundable and non-transferrable. You cannot sell or trade and MRV fee with someone else.</p>
+</li>
+<li id='paid_wrong_fee'>
+<h3 class='h4'>I paid the wrong MRV fee amount, what should I do?</h3>
+<p>Sign into your account. Go to your &quot;My Account&quot; home page, click on &quot;Continue&quot; and follow the instructions.</p>
+</li>
+<li id='paid_after_expiration'>
+<h3 class='h4'>I paid the MRV amount after the expiration date, what should I do?</h3>
+<p>Sign into your account. Go to your &quot;My Account&quot; home page, click on &quot;Continue&quot; and follow the instructions.</p>
+</li>
+<li id='overpaid_mrv_fee'>
+<h3 class='h4'>I overpaid my MRV fee, what should I do?</h3>
+<p>If you have questions or concerns about your payment, please use the &quot;Contact Us&quot; 
